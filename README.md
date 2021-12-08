@@ -13,3 +13,4 @@
 #включить !example_override.tf
 
 # Игнорировать CLI конфиг файлы .terraformrc и terraform.rc
+"added new line after new branch fix" 
