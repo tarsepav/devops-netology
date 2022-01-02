@@ -1,15 +1,43 @@
-# devops-netology"add test line into readme.md" 
+    ÐÐ°Ð¹Ð´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð½Ñ‹Ð¹ Ñ…ÐµÑˆ Ð¸ ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹ ÐºÐ¾Ð¼Ð¼Ð¸Ñ‚Ð°, Ñ…ÐµÑˆ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ÑÑ Ð½Ð° aefea.
+     >git log aefea
+     aefead2207ef7e2aa5dc81a34aedf0cad4c32545    Update CHANGELOG.md  
+    
+    ÐšÐ°ÐºÐ¾Ð¼Ñƒ Ñ‚ÐµÐ³Ñƒ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ ÐºÐ¾Ð¼Ð¼Ð¸Ñ‚ 85024d3?
+     >git log 85024d3 --oneline 
+      (tag: v0.12.23)
+    
+    Ð¡ÐºÐ¾Ð»ÑŒÐºÐ¾ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÐµÐ¹ Ñƒ ÐºÐ¾Ð¼Ð¼Ð¸Ñ‚Ð° b8d720? ÐÐ°Ð¿Ð¸ÑˆÐ¸Ñ‚Ðµ Ð¸Ñ… Ñ…ÐµÑˆÐ¸.
+     >git log b8d720
+      Merge: 56cd7859e 9ea88f22f
+      
+    ÐŸÐµÑ€ÐµÑ‡Ð¸ÑÐ»Ð¸Ñ‚Ðµ Ñ…ÐµÑˆÐ¸ Ð¸ ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¸ Ð²ÑÐµÑ… ÐºÐ¾Ð¼Ð¼Ð¸Ñ‚Ð¾Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð±Ñ‹Ð»Ð¸ ÑÐ´ÐµÐ»Ð°Ð½Ñ‹ Ð¼ÐµÐ¶Ð´Ñƒ Ñ‚ÐµÐ³Ð°Ð¼Ð¸ v0.12.23 Ð¸ v0.12.24.
+     >git log v0.12.23..v0.12.24 --oneline
+      33ff1c03b (tag: v0.12.24) v0.12.24
+      b14b74c49 [Website] vmc provider links
+      3f235065b Update CHANGELOG.md
+      6ae64e247 registry: Fix panic when server is unreachable
+      5c619ca1b website: Remove links to the getting started guide's old location
+      06275647e Update CHANGELOG.md
+      d5f9411f5 command: Fix bug when using terraform login on Windows
+      4b6d06cc5 Update CHANGELOG.md
+      dd01a3507 Update CHANGELOG.md
+      225466bc3 Cleanup after v0.12.23 release
+    
+    ÐÐ°Ð¹Ð´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¼Ð¼Ð¸Ñ‚ Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼ Ð±Ñ‹Ð»Ð° ÑÐ¾Ð·Ð´Ð°Ð½Ð° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ func providerSource, ÐµÐµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð² ÐºÐ¾Ð´Ðµ Ð²Ñ‹Ð³Ð»ÑÐ´Ð¸Ñ‚ Ñ‚Ð°Ðº func providerSource(...) (Ð²Ð¼ÐµÑÑ‚Ð¾ Ñ‚Ñ€Ð¾ÐµÑ‚Ð¾Ñ‡ÐµÐ³Ð¾ Ð¿ÐµÑ€ÐµÑ‡Ð¸ÑÐ»ÐµÐ½Ñ‹ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚Ñ‹).
+     >git log -S "func providerSource("
+      8c928e835
+      
+    ÐÐ°Ð¹Ð´Ð¸Ñ‚Ðµ Ð²ÑÐµ ÐºÐ¾Ð¼Ð¼Ð¸Ñ‚Ñ‹ Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ð±Ñ‹Ð»Ð° Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð° Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ globalPluginDirs.
+     >git log --oneline -L :globalPluginDirs:plugins.go
+      78b122055 Remove config.go and update things using its aliases
+      52dbf9483 keep .terraform.d/plugins for discovery
+      41ab0aef7 Add missing OS_ARCH dir to global plugin paths
+      66ebff90c move some more plugin search path logic to command
+      8364383c3 Push plugin discovery down into command package
 
-# **/.terraform/* - ïðîèãíîðèðîâàòü âñå ôàéëû â ïîäêàòàëîãå, êàòàëîã ìîæåò áûòü ëþáîé âëîæåííîñòè
-
-#èñêëþ÷èòü âñå ôàéëû ñ ðàñøèðåíèåì *.tfstate ñ ëþáûì âêëþ÷åíèåì*.tfstate.*
-
-#èñêëþ÷èòü crash.log
-
-#èñêëþ÷èòü âñå *.tfvars ôàéëû
-
-# èñêëþ÷èòü ôàéëû override.tf, override.tf.json, âñå âêëþ÷åíèÿ *_override.tf, *_override.tf.json
-
-#âêëþ÷èòü !example_override.tf
-
-# Èãíîðèðîâàòü CLI êîíôèã ôàéëû .terraformrc è terraform.rc
+      (END)
+    
+    ÐšÑ‚Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ synchronizedWriters?
+     >git log --reverse -S "synchronizedWriters"
+      commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5
+      Author: Martin Atkins <mart@degeneration.co.uk>
