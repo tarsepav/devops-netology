@@ -1,0 +1,53 @@
+1. 
+chdir("/tmp")
+
+2.
+stat("/home/vagrant/.magic.mgc", 0x7ffd249ce0c0) = -1 ENOENT (No such file or directory)
+stat("/home/vagrant/.magic", 0x7ffd249ce0c0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/magic.mgc", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat("/etc/magic", {st_mode=S_IFREG|0644, st_size=111, ...}) = 0
+openat(AT_FDCWD, "/etc/magic", O_RDONLY) = 3
+
+openat(AT_FDCWD, "/usr/share/misc/magic.mgc", O_RDONLY) = 3
+
+3.
+lsof -p PID
+echo '' >/proc/PID/fd/%d
+перезаписать в удаленный файл поток
+
+4. 
+Нет, но висят в процессах, ожидая wait
+
+5.
+root@vagrant:~# opensnoop-bpfcc -d 1
+PID    COMM               FD ERR PATH
+843    vminfo              5   0 /var/run/utmp
+633    dbus-daemon        -1   2 /usr/local/share/dbus-1/system-services
+633    dbus-daemon        19   0 /usr/share/dbus-1/system-services
+633    dbus-daemon        -1   2 /lib/dbus-1/system-services
+633    dbus-daemon        19   0 /var/lib/snapd/dbus-1/system-services/
+
+6.
+System call uname
+Part of the utsname information is also accessible  via  /proc/sys/ker‐
+       nel/{ostype, hostname, osrelease, version, domainname}.
+
+7.
+; - последовательное выполнение команд вне зависимости от результата предыдущего шага.
+&& - выполнение команд при успешном результате предыдущего шага.
+
+set -e  Exit immediately if a command exits with a non-zero status.
+Нет смысла использовать &&, т.к. выполнение тут же прервет сессию при статусе команды, отличной от 0.
+
+8.
+
+set   -e  Exit immediately if a command exits with a non-zero status.
+      -o pipefail     the return value of a pipeline is the status of the last command to exit with a non-zero status, or zero if no command exited with a non-zero 
+      -u  Treat unset variables as an error when substituting.
+      -x  Print commands and their arguments as they are executed.
+
+При использовании в сценарии повышает уровень логирования ошибок и прерывает его работу при их наличии в последней исполняемой команде.
+
+9.
+
+Самые частые S% - процессы ожидающие завершения (спящие)
