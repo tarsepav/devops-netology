@@ -6,7 +6,7 @@
     Description=Node Exporter
 
     [Service]
-    ExecStart=/opt/node_exporter/node_exporter
+    ExecStart=/opt/node_exporter/node_exporter -f -P $EXTRA_OPTS
     EnvironmentFile=/etc/default/node_exporter
 
     [Install]
