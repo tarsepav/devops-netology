@@ -1,5 +1,7 @@
 
   1.
+    sudo systemctl enable --now node_exporter.service;
+
     [Unit]
     Description=Node Exporter
 
