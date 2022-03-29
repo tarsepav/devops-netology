@@ -166,5 +166,46 @@ Linux
            bond-master bond0
            bond-primary eth0 eth1
 5.
+
+        vagrant@vagrant:/$ ipcalc -b 10.10.10.0/29
+        Address:   10.10.10.0
+        Netmask:   255.255.255.248 = 29
+        Wildcard:  0.0.0.7
+        =>
+        Network:   10.10.10.0/29
+        HostMin:   10.10.10.1
+        HostMax:   10.10.10.6
+        Broadcast: 10.10.10.7
+        Hosts/Net: 6                     Class A, Private Internet
+        
+6 хостов, 1 broadcast 1 адрес сети
+
+Сеть /24 можно разбить на 32 с маской /29
+
 6.
+Подсеть 100.64.0.0/10
+
+        vagrant@vagrant:/$ ipcalc -b 100.64.0.0/10 -s 50
+        Address:   100.64.0.0
+        Netmask:   255.192.0.0 = 10
+        Wildcard:  0.63.255.255
+        =>
+        Network:   100.64.0.0/10
+        HostMin:   100.64.0.1
+        HostMax:   100.127.255.254
+        Broadcast: 100.127.255.255
+        Hosts/Net: 4194302               Class A
+
+        1. Requested size: 50 hosts
+        Netmask:   255.255.255.192 = 26
+        Network:   100.64.0.0/26
+        HostMin:   100.64.0.1
+        HostMax:   100.64.0.62
+        Broadcast: 100.64.0.63
+        Hosts/Net: 62                    Class A
+
+        Needed size:  64 addresses.
+        Used network: 100.64.0.0/26
+        
+Оптимальна маска /26
 7.
