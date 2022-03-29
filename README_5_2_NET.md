@@ -147,6 +147,24 @@ Linux
 
       mode=6 (balance-alb)
       Адаптивная балансировка нагрузки (более совершенная). Обеспечивает балансировку нагрузки как исходящего (TLB, transmit load balancing), так и входящего трафика (для IPv4 через ARP). Не требует специальной поддержки коммутатором, но требует возможности изменять MAC-адрес устройства.
+      
+Пример конфига
+
+        auto bond0
+        iface bond0 inet dhcp
+           bond-slaves none
+           bond-mode active-backup
+           bond-miimon 100
+
+        auto eth0
+           iface eth0 inet manual
+           bond-master bond0
+           bond-primary eth0 eth1
+
+        auto eth1
+        iface eth1 inet manual
+           bond-master bond0
+           bond-primary eth0 eth1
 5.
 6.
 7.
