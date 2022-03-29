@@ -208,4 +208,16 @@ Linux
         Used network: 100.64.0.0/26
         
 Оптимальна маска /26
+
 7.
+Linux:
+
+        проверить ARP таблицу: arp -n
+        очитстить ARP кеш: sudo ip -s -s neigh flush all
+        удалить один IP: sudo arp -d 192.168.100.100
+
+Windows:
+
+        проверить ARP таблицу: arp -a
+        очитстить ARP кеш: netsh interface ip delete arpcache
+        удалить один IP: arp -d 192.168.100.100
