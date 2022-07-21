@@ -18,5 +18,7 @@ Overlay Network — логическая или виртуальная сеть,
 
 2.
 
+<img src="https://github.com/tarsepav/devops-netology/blob/main/src/snap551.png"></img>
 3.
 
+<img src="https://github.com/tarsepav/devops-netology/blob/main/src/snap552.png"></img>
