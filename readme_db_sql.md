@@ -211,52 +211,54 @@ docker-compose.yml
     
     Показывает стоимость(нагрузку на исполнение) запроса 
     
- 6.
- 
-     vagrant@server1:~/homeworks/postgreSQL$ docker run --rm -d -e POSTGRES_USER=test-admin-user -e POSTGRES_PASSWORD=netology -e POSTGRES_DB=test_db -v postgresql_backup:/media/postgresql/backup --name psql2 postgres:12-alpine
+6.      
+    
+        vagrant@server1:~/homeworks/postgreSQL$ docker exec -t psql pg_dump -U test-admin-user test_db -f /media/postgresql/backup/test_db_dump.sql
 
-    vagrant@server1:~/homeworks/postgreSQL$ docker ps -a
-    CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS                      PORTS      NAMES
-    e542e8e61ba9   postgres:12-alpine   "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes                5432/tcp   psql2
-    dd90986be5e9   postgres:12-alpine   "docker-entrypoint.s…"   4 hours ago     Exited (0) 13 minutes ago              psql
+        vagrant@server1:~/homeworks/postgreSQL$ docker run --rm -d -e POSTGRES_USER=test-admin-user -e POSTGRES_PASSWORD=netology -e POSTGRES_DB=test_db -v        postgresql_backup:/media/postgresql/backup --name psql2 postgres:12-alpine
 
-    vagrant@server1:~/homeworks/postgreSQL$ docker exec -i psql2 psql -U test-admin-user -d test_db -f /media/postgresql/backup/test_db.sql
-    SET
-    SET
-    SET
-    SET
-    SET
-    SET
-    CREATE TABLE
-    ALTER TABLE
-    CREATE SEQUENCE
-    ALTER TABLE
-    ALTER SEQUENCE
-    CREATE TABLE
-    ALTER TABLE
-    CREATE SEQUENCE
-    ALTER TABLE
-    ALTER SEQUENCE
-    ALTER TABLE
-    ALTER TABLE
-    COPY 5
-    COPY 5
-     setval 
-    --------
-          1
-    (1 row)
+        vagrant@server1:~/homeworks/postgreSQL$ docker ps -a
+        CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS                      PORTS      NAMES
+        e542e8e61ba9   postgres:12-alpine   "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes                5432/tcp   psql2
+        dd90986be5e9   postgres:12-alpine   "docker-entrypoint.s…"   4 hours ago     Exited (0) 13 minutes ago              psql
 
-     setval 
-    --------
-          1
-    (1 row)
+        vagrant@server1:~/homeworks/postgreSQL$ docker exec -i psql2 psql -U test-admin-user -d test_db -f /media/postgresql/backup/test_db_dump.sql
 
-    ALTER TABLE
-    ALTER TABLE
-    CREATE INDEX
-    ALTER TABLE
-    GRANT
-    GRANT
-    GRANT
-    GRANT
+        SET
+        SET
+        SET
+        SET
+        SET
+        SET
+        CREATE TABLE
+        ALTER TABLE
+        CREATE SEQUENCE
+        ALTER TABLE
+        ALTER SEQUENCE
+        CREATE TABLE
+        ALTER TABLE
+        CREATE SEQUENCE
+        ALTER TABLE
+        ALTER SEQUENCE
+        ALTER TABLE
+        ALTER TABLE
+        COPY 5
+        COPY 5
+         setval 
+        --------
+              1
+        (1 row)
 
+         setval 
+        --------
+              1
+        (1 row)
+
+        ALTER TABLE
+        ALTER TABLE
+        CREATE INDEX
+        ALTER TABLE
+        GRANT
+        GRANT
+        GRANT
+        GRANT
